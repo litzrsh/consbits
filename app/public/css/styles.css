@@ -1,0 +1,229 @@
+@font-face {
+  font-family: "MaruBuri";
+  src: local("Trickster"), url(../fonts/MaruBuri-Light.otf) format("opentype");
+}
+
+* {
+  font-family: MaruBuri;
+}
+
+html,
+body,
+#__nuxt {
+  --font-size: 16px;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  font-size: var(--font-size);
+  padding: 0;
+  margin: 0;
+}
+
+/* Commons */
+.is-fullwidth {
+  flex-grow: 1;
+}
+
+/* Input */
+input {
+  background: transparent;
+  font-size: 1em;
+  color: var(--color);
+  border: 1px solid var(--border);
+  padding: 0.5em 0.75em;
+  flex: 1 1 100%;
+}
+
+input::placeholder {
+  color: var(--placeholder);
+}
+
+input:focus,
+input:focus-visible {
+  outline: none;
+}
+
+/* Checkbox */
+.checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  column-gap: 0.5em;
+  cursor: pointer;
+}
+
+.checkbox input[type="checkbox"] {
+  display: none;
+}
+
+.checkbox::before {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--background);
+  content: "";
+  width: 1em;
+  height: 1em;
+  padding: 0.25em;
+  font-size: 0.75em;
+}
+
+.checkbox:has(input:checked)::before {
+  font-family: "Font Awesome 6 Free";
+  content: "\f00c";
+  font-weight: 900;
+  background-color: var(--background);
+  color: var(--color);
+}
+
+/* Button */
+.buttons {
+  display: flex;
+  height: 2em;
+  padding: 0.25em;
+}
+
+.button {
+  background: var(--background);
+  border: 1px solid var(--border);
+  color: var(--color);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5em;
+}
+
+/* Field */
+.field {
+  display: flex;
+  padding: 0.25em;
+}
+
+.field + .field {
+  margin-top: 0.5em;
+}
+
+@media (prefers-color-scheme: light) {
+  html,
+  body {
+    background-color: #ffffff;
+    color: #000000;
+  }
+
+  input {
+    --color: #000000;
+    --placeholder: #6d6d6d;
+    --border: #999999;
+  }
+
+  .checkbox {
+    --background: #000000;
+    --color: #ffffff;
+  }
+
+  .button {
+    --background: #ffffff;
+    --border: #999999;
+    --color: #000000;
+  }
+
+  .button:hover {
+    --background: #ffffff;
+    --border: #999999;
+    --color: #000000;
+  }
+
+  .button:disabled {
+    --background: #ffffff;
+    --border: #999999;
+    --color: #000000;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  html,
+  body {
+    background-color: #000000;
+    color: #ffffff;
+  }
+
+  input {
+    --color: #ffffff;
+    --placeholder: #c5c5c5;
+    --border: #eeeeee;
+  }
+
+  .checkbox {
+    --background: #ffffff;
+    --color: #000000;
+  }
+
+  .button {
+    --background: #000000;
+    --border: #eeeeee;
+    --color: #ffffff;
+  }
+
+  .button:hover {
+    --background: #000000;
+    --border: #eeeeee;
+    --color: #ffffff;
+  }
+
+  .button:disabled {
+    --background: #000000;
+    --border: #eeeeee;
+    --color: #ffffff;
+  }
+}
+
+/* Login */
+.login {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  background-image: url(../images/login_bg.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.login .container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2em;
+  background-color: #ffffff;
+  width: 80%;
+  max-width: 400px;
+}
+
+.login .container .logo {
+  height: 100px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-bottom: 2em;
+}
+
+@media (prefers-color-scheme: light) {
+  .login .container {
+    background: #ffffff;
+  }
+
+  .login .container .logo {
+    background-image: url(../images/logo.png);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .login .container {
+    background: #000000;
+  }
+
+  .login .container .logo {
+    background-image: url(../images/logo_dark.png);
+  }
+}

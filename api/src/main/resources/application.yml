@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: scratch-book-api
+  jackson:
+    default-property-inclusion: non_null
